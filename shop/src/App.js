@@ -9,18 +9,27 @@ import AboutPage from "pages/About/AboutPage";
 import CatalogPage from "pages/Catalog/CatalogPage";
 import HomePage from "pages/Home/HomePage";
 
-const App = () => (
-  <Router>
-    <>
-      <Nav />
-      <Container>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/catalog" component={CatalogPage} />
-        <Route path="/about" component={AboutPage} />
-      </Container>
-      <Footer />
-    </>
-  </Router>
-);
+import { Provider } from "react-redux";
+import store from "./store/store";
+
+
+function App() {
+    return (
+        <Provider store={store}>
+            <Router>
+                <>
+                   <Nav />
+                   <Container>
+                    <Route exact path="/" component={HomePage} />
+                     <Route path="/catalog" component={CatalogPage} />
+                     <Route path="/about" component={AboutPage} />
+                   </Container>
+                   <Footer />
+                </>
+               </Router>
+        </Provider>
+    );
+}
 
 export default App;
+
