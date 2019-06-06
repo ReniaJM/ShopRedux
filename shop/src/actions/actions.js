@@ -1,64 +1,35 @@
+export const ACTION_TYPES = {
+    PRODUCT_FETCH: "USER_FETCH",
+    PRODUCT_FETCH_SUCCESS: "USER_FETCH_SUCCESS",
+    PRODUCT_FETCH_ERROR: "USER_FETCH_ERROR"
+};
 
+export const fetchProduct = () => ({
+    type: ACTION_TYPES.PRODUCT_FETCH
+});
 
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
-export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
+export const fetchProductSuccess = product => ({
+    type: ACTION_TYPES.PRODUCT_FETCH_SUCCESS,
+    product
+});
 
-export function selectSubreddit(subreddit) {
-    return {
-        type: SELECT_SUBREDDIT,
-        subreddit
-    }
-}
+export const fetchProductError = () => ({
+    type: ACTION_TYPES.PRODUCT_FETCH_ERROR
+});
 
-export function invalidateSubreddit(subreddit) {
-    return {
-        type: INVALIDATE_SUBREDDIT,
-        subreddit
-    }
-}
+export const fetchRandomProduct = () => {
+    return async dispatch => {
+        try {
+            dispatch(fetchProduct());
 
-function requestPosts(subreddit) {
-    return {
-        type: REQUEST_POSTS,
-        subreddit
-    }
-}
+            const response = await fetch("https://api.jsonbin.io/b/5cf311bee36bab4cf3101423");
+            const data = await response.json();
 
-function receivePosts(subreddit, json) {
-    return {
-        type: RECEIVE_POSTS,
-        subreddit,
-        posts: json.data.children.map(child => child.data),
-        receivedAt: Date.now()
-    }
-}
+            const [product] = data.results;
 
-function fetchPosts(subreddit) {
-    return dispatch => {
-        dispatch(requestPosts(subreddit))
-        return fetch(`https://api.jsonbin.io/b/5cf311bee36bab4cf3101423`)
-            .then(response => response.json())
-            .then(json => dispatch(receivePosts(subreddit, json)))
-    }
-}
-
-function shouldFetchPosts(state, subreddit) {
-    const posts = state.postsBySubreddit[subreddit]
-    if (!posts) {
-        return true
-    } else if (posts.isFetching) {
-        return false
-    } else {
-        return posts.didInvalidate
-    }
-}
-
-export function fetchPostsIfNeeded(subreddit) {
-    return (dispatch, getState) => {
-        if (shouldFetchPosts(getState(), subreddit)) {
-            return dispatch(fetchPosts(subreddit))
+            dispatch(fetchProductSuccess(product));
+        } catch (e) {
+            dispatch(fetchProductError());
         }
-    }
-}
+    };
+};

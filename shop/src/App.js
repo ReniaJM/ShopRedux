@@ -11,11 +11,13 @@ import HomePage from "pages/Home/HomePage";
 
 import { Provider } from "react-redux";
 import store from "./store/store";
+import ProductContainer from "./container/ProductContainer";
 
 
 function App() {
     return (
         <Provider store={store}>
+            <ProductContainer />
             <Router>
                 <>
                    <Nav />
