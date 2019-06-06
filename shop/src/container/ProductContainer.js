@@ -11,7 +11,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
+
     fetchRandomProduct
+
 };
 
 const ProductContainer = connect(
