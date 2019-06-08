@@ -5,7 +5,7 @@ import HeaderSmall from "components/Header/HeaderSmall";
 import ProductsList from "components/ProductsList/ProductsList";
 
 
-const HomePage = ({product, isLoading, isError, fetchProductsWithRedux} ) => {
+const HomePage = ({product, isLoading, isError, fetchProductsWithRedux}) => {
 
     useEffect(() => {
         fetchProductsWithRedux();
