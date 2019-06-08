@@ -27,11 +27,26 @@ export function fetchProductError(product) {
 
 };
 
-export function fetchRandomProduct(product){
-    return dispatch =>{
-            dispatch(fetchProduct(product));
-            return fetch("https://api.jsonbin.io/b/5cf311bee36bab4cf3101423")
-           .then(response =>response.json())
 
-    };
-};
+export const fetchRandomProduct=()=> {
+    const URL = "https://jsonplaceholder.typicode.com/posts";
+    return fetch(URL, { method: 'GET'})
+        .then( response => Promise.all([response, response.json()]));
+}
+
+export const  fetchProductsWithRedux =()=> {
+    return (dispatch) => {
+        dispatch(fetchProduct());
+        return fetchRandomProduct().then(([response, json]) =>{
+            if(response.status === 200){
+                dispatch(fetchProductSuccess(json))
+            }
+            else{
+                dispatch(fetchProductError())
+            }
+        })
+    }
+}
+
+
+

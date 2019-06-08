@@ -1,18 +1,13 @@
-import React, {Component} from "react";
-import styles from "./Product.module.css";
+import React,{ useEffect } from "react";
+// import styles from "./Product.module.css";
 
 
 
-class Product extends Component {
+const Product = ({ product, isLoading, isError, fetchProductsWithRedux }) =>{
 
-    componentWillMount() {
-
-       console.log(this.props)
-    }
-
-
-render () {
-    const { isError,isLoading,name, image, amount } = this.props;
+    useEffect(() => {
+        fetchProductsWithRedux();
+    }, []);
 
 
     if (isError) {
@@ -23,17 +18,23 @@ render () {
         return <h2>Loading...</h2>;
     }
 
-
     return (
+        <div>
 
-        <div className={styles.Product}>
-            <img className={styles.Image} src={image} alt={name} />
-            <p className={styles.Price}>${amount}</p>
-            <h3>{name}</h3>
+            {product.map((pro, i) =>
+                <p key ={pro.id}>
+                Name: {pro.title} {pro.id}
+            </p>
+            )}
+
         </div>
     );
 };
 
-}
+
 
 export default Product;
+
+
+
+

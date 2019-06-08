@@ -2,17 +2,17 @@ import { connect } from "react-redux";
 
 import Product from "../components/Product/Product";
 
-import { fetchRandomProduct } from "../actions/actions";
+import { fetchProductsWithRedux } from "../actions/actions";
 
 const mapStateToProps = state => ({
-   product: state.product,
+    product: state.product,
     isLoading: state.isLoading,
     isError: state.isError
 });
 
 const mapDispatchToProps = {
 
-    fetchRandomProduct
+    fetchProductsWithRedux
 
 };
 
@@ -22,3 +22,5 @@ const ProductContainer = connect(
 )(Product);
 
 export default ProductContainer;
+
+

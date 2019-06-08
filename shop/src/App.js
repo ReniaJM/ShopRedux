@@ -18,17 +18,19 @@ function App() {
     return (
         <Provider store={store}>
             <ProductContainer />
-            <Router>
-                <>
-                   <Nav />
-                   <Container>
-                    <Route exact path="/" component={HomePage} />
-                     <Route path="/catalog" component={CatalogPage} />
-                     <Route path="/about" component={AboutPage} />
-                   </Container>
-                   <Footer />
-                </>
-               </Router>
+
+            {/*<Router>*/}
+                {/*<>*/}
+                   {/*<Nav />*/}
+                   {/*<Container>*/}
+
+                    {/*<Route exact path="/" component={HomePage} />*/}
+                     {/*<Route path="/catalog" component={CatalogPage} />*/}
+                     {/*<Route path="/about" component={AboutPage} />*/}
+                   {/*</Container>*/}
+                   {/*<Footer />*/}
+                {/*</>*/}
+               {/*</Router>*/}
         </Provider>
     );
 }
