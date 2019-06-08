@@ -29,7 +29,7 @@ export function fetchProductError(product) {
 
 
 export const fetchRandomProduct=()=> {
-    const URL = "https://jsonplaceholder.typicode.com/posts";
+    const URL = "http://localhost:3001/";
     return fetch(URL, { method: 'GET'})
         .then( response => Promise.all([response, response.json()]));
 }

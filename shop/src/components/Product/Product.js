@@ -23,7 +23,7 @@ const Product = ({ product, isLoading, isError, fetchProductsWithRedux }) =>{
 
             {product.map((pro, i) =>
                 <p key ={pro.id}>
-                Name: {pro.title} {pro.id}
+                Name: {pro.name} {pro.id}
             </p>
             )}
 
