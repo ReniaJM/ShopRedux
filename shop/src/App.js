@@ -7,30 +7,30 @@ import Footer from "components/Footer/Footer";
 
 import AboutPage from "pages/About/AboutPage";
 import CatalogPage from "pages/Catalog/CatalogPage";
-import HomePage from "pages/Home/HomePage";
 
 import { Provider } from "react-redux";
 import store from "./store/store";
-import ProductContainer from "./container/ProductContainer";
+import HomeContainer from "container/HomeContainer";
 
 
 function App() {
     return (
         <Provider store={store}>
-            <ProductContainer />
 
-            {/*<Router>*/}
-                {/*<>*/}
-                   {/*<Nav />*/}
-                   {/*<Container>*/}
 
-                    {/*<Route exact path="/" component={HomePage} />*/}
+            <Router>
+                <>
+                   <Nav />
+                   <Container>
+                       {/*<HomeContainer/>*/}
+                    <Route exact path="/" component={HomeContainer} />
                      {/*<Route path="/catalog" component={CatalogPage} />*/}
-                     {/*<Route path="/about" component={AboutPage} />*/}
-                   {/*</Container>*/}
-                   {/*<Footer />*/}
-                {/*</>*/}
-               {/*</Router>*/}
+                     <Route path="/about" component={AboutPage} />
+
+                   </Container>
+                   <Footer />
+                </>
+               </Router>
         </Provider>
     );
 }
