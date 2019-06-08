@@ -22,11 +22,9 @@ function App() {
                 <>
                    <Nav />
                    <Container>
-                       {/*<HomeContainer/>*/}
                     <Route exact path="/" component={HomeContainer} />
                      {/*<Route path="/catalog" component={CatalogPage} />*/}
                      <Route path="/about" component={AboutPage} />
-
                    </Container>
                    <Footer />
                 </>

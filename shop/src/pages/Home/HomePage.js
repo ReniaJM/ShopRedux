@@ -2,12 +2,11 @@ import React, {useEffect} from "react";
 
 import HeaderBig from "components/Header/HeaderBig";
 import HeaderSmall from "components/Header/HeaderSmall";
-//
-// import ProductService from "services/ProductService";
 import ProductsList from "components/ProductsList/ProductsList";
 
 
 const HomePage = ({product, isLoading, isError, fetchProductsWithRedux} ) => {
+
     useEffect(() => {
         fetchProductsWithRedux();
     }, []);
@@ -52,7 +51,7 @@ const HomePage = ({product, isLoading, isError, fetchProductsWithRedux} ) => {
         featured: true
     });
 
-    const ProductsSection = ({ title, products }) => (
+    const ProductsSection = ({ title, product }) => (
         <>
             <HeaderSmall>{title}</HeaderSmall>
             <ProductsList product={product} />
