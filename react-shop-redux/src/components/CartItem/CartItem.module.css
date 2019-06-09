@@ -33,28 +33,7 @@
   margin: 10px;
 }
 .Button:hover {
-  background: #ff0000;
+  background: #000;
   color: #0b102b;
 }
-.Button:before,
-.Button:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: #0b102b;
-  transition: 400ms ease all;
-}
-.Button:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-.Button:hover:before,
-.Button:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
-}
+
