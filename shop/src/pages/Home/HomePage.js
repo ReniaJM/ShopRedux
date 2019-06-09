@@ -51,6 +51,7 @@ const HomePage = ({product, isLoading, isError, fetchProductsWithRedux}) => {
         featured: true
     });
 
+
     const ProductsSection = ({ title, product }) => (
         <>
             <HeaderSmall>{title}</HeaderSmall>
@@ -66,8 +67,5 @@ return (
     )
 
 }
-
-
-
 
 export default HomePage;

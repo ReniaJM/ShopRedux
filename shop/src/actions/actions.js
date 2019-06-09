@@ -9,7 +9,6 @@ export function fetchProduct (product){
         type: ACTION_TYPES.PRODUCT_FETCH,
         product
     }
-
 };
 
 export function fetchProductSuccess (product){
@@ -17,19 +16,16 @@ export function fetchProductSuccess (product){
         type: ACTION_TYPES.PRODUCT_FETCH_SUCCESS,
         product
     }
-
 };
 
 export function fetchProductError(product) {
     return {
         type: ACTION_TYPES.PRODUCT_FETCH_ERROR
     }
-
 };
 
-
 export const fetchRandomProduct=()=> {
-    const URL = "http://localhost:3001/";
+    const URL = "http://react2018-shop.s3-website-eu-west-1.amazonaws.com/";
     return fetch(URL, { method: 'GET'})
         .then( response => Promise.all([response, response.json()]));
 }

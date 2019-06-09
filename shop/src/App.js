@@ -17,8 +17,6 @@ import CatalogContainer from "container/CatalogContainer";
 function App() {
     return (
         <Provider store={store}>
-
-
             <Router>
                 <>
                    <Nav />
