@@ -6,7 +6,6 @@ import ProductContainer from "../../container/ProductContainer";
 
 const ProductsList = ({ product, addProduct, name, manufacture }) => {
   const searchTextLower = name.toString().toLowerCase();
-  console.log(product)
 
   const productsFiltred = product.filter(product =>
       product.name.toLowerCase().includes(searchTextLower)
@@ -26,7 +25,7 @@ const ProductsList = ({ product, addProduct, name, manufacture }) => {
     </div>
     )
 
-}
+};
 
 
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import CartList from "../components/CartItemList/CartList";
+import CartList from "../components/CartList/CartList";
 
 const getCartItems = state => state.cartItems;
 

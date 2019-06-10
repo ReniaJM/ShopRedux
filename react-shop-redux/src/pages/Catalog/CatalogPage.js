@@ -10,7 +10,6 @@ const CatalogPage = ({
   isLoading,
   isError,
   fetchProductsWithRedux,
-  addProduct
 }) => {
   useEffect(() => {
     fetchProductsWithRedux();

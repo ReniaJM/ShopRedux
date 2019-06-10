@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import HeaderBig from "components/Header/HeaderBig";
 import HeaderSmall from "components/Header/HeaderSmall";
-import ProductsList from "components/ProductsList/ProductsList";
+import ProductListHome from "components/ProductsListHome/ProductListHome";
 
 const HomePage = ({ product, isLoading, isError, fetchProductsWithRedux }) => {
   useEffect(() => {
@@ -54,7 +54,7 @@ const HomePage = ({ product, isLoading, isError, fetchProductsWithRedux }) => {
   const ProductsSection = ({ title, product }) => (
     <>
       <HeaderSmall>{title}</HeaderSmall>
-      <ProductsList product={product} />
+      <ProductListHome product={product} />
     </>
   );
   return (

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import CartCounter from "../components/cartCounter/CartCounter";
+import Counter from "../components/Counter/Counter";
 
 const mapStateToProps = state => {
   return {
@@ -9,6 +9,6 @@ const mapStateToProps = state => {
   };
 };
 
-const CartCounterContainer = connect(mapStateToProps)(CartCounter);
+const CartCounterContainer = connect(mapStateToProps)(Counter);
 
 export default CartCounterContainer;

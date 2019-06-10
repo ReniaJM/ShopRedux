@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Nav.module.css";
-import cartImg from "../../img/shopping-cart.png";
+import cartImg from "../../img/cart.png";
 
 import Container from "components/Container/Container";
 import CartCounterContainer from "../../container/CartCounterContainer";

@@ -16,9 +16,10 @@
   display: inline-block;
   font-size: 24px;
   line-height: 28px;
-  color: #00a1b4;
+  color: red;
   padding: 3px 0px;
 }
+
 .Button {
   background: #0b102b;
   color: #fff;
@@ -32,8 +33,9 @@
   outline: none;
   margin: 10px;
 }
+
 .Button:hover {
-  background: #000;
+  background: red;
   color: #0b102b;
 }
 
