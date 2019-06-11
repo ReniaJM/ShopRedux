@@ -23,7 +23,7 @@ export function fetchProductError() {
     type: ACTION_TYPES.PRODUCT_FETCH_ERROR
   };
 }
-export const uniqueManufacturers = product => {
+export const radioManufacture = product => {
   return product
       .map(e => e.manufacture)
       .filter((v, i, a) => a.indexOf(v) === i);

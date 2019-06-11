@@ -1,8 +1,9 @@
 .Product {
-  width: 15%;
+  width: 25%;
   background: white;
   margin: 1%;
   text-align: center;
+  border-radius: 10px;
 }
 
 .Image {
@@ -16,14 +17,14 @@
   display: inline-block;
   font-size: 24px;
   line-height: 28px;
-  color: red;
+  color: #e04f5f;
   padding: 3px 0px;
 }
 
 .Button {
   background: #0b102b;
-  color: #fff;
-  border: none;
+  color: #eee;
+  border-radius: 5px;
   position: relative;
   height: 40px;
   font-size: 1.6em;
@@ -35,7 +36,7 @@
 }
 
 .Button:hover {
-  background: red;
+  background: #e04f5f;
   color: #0b102b;
 }
 

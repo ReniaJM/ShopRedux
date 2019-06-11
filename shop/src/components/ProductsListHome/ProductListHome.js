@@ -1,6 +1,6 @@
 import React from "react";
 import ProductContainer from "../../container/ProductContainer";
-import styles from "../ProductsList/ProductsList.module.css";
+import styles from "../ProductsListCatalog/ProductsListCatalog.module.css";
 
 const ProductListHome = ({ product }) => (
 

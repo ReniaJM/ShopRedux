@@ -1,6 +1,6 @@
-import { ACTION_TYPES } from "../actions/cartActions";
+import { ACTION_TYPES } from "../actions/cart";
 
-const cartReducer = (productsInCart = [], action) => {
+const cart = (productsInCart = [], action) => {
   switch (action.type) {
     case ACTION_TYPES.ADD_PRODUCT_TO_CART:
       return [...productsInCart, action.product];
@@ -12,4 +12,4 @@ const cartReducer = (productsInCart = [], action) => {
   }
 };
 
-export default cartReducer;
+export default cart;

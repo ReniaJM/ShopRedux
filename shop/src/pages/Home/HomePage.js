@@ -7,7 +7,8 @@ import ProductListHome from "components/ProductsListHome/ProductListHome";
 const HomePage = ({ product, isLoading, isError, fetchProductsWithRedux }) => {
   useEffect(() => {
     fetchProductsWithRedux();
-  }, []);
+  }, [fetchProductsWithRedux]);
+
 
   if (isError) {
     return <h2>Error while loading... :(</h2>;

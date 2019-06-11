@@ -1,8 +1,8 @@
-import { ACTION_TYPES } from "../actions/productsActions";
+import { ACTION_TYPES } from "../actions/products";
 
 const initState = { product: null, isLoading: true, isError: false };
 
-const productReducer = (state = initState, action) => {
+const product = (state = initState, action) => {
   switch (action.type) {
     case ACTION_TYPES.PRODUCT_FETCH:
       return { ...initState };
@@ -14,4 +14,4 @@ const productReducer = (state = initState, action) => {
       return state;
   }
 };
-export default productReducer;
+export default product;

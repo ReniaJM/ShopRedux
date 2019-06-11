@@ -23,7 +23,7 @@ const Product = ({isError, isLoading, id, name, image, amount, addProduct}) => {
             className={styles.Button}
             onClick={() => addProductToCart(name, image, amount)}
           >
-            Buy
+            Order
           </button>
         </div>
       </>

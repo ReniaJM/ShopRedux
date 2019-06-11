@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import CartList from "../components/CartList/CartList";
+import OrderList from "../OrderList/OrderList";
 
 const getCartItems = state => state.cartItems;
 
@@ -10,6 +10,6 @@ const mapStateToProps = state => {
   };
 };
 
-const CartListContainer = connect(mapStateToProps)(CartList);
+const OrderListContainer = connect(mapStateToProps)(OrderList);
 
-export default CartListContainer;
+export default OrderListContainer;

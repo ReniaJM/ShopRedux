@@ -1,10 +1,10 @@
 import React from "react";
 
-import styles from "./ProductsList.module.css";
+import styles from "./ProductsListCatalog.module.css";
 
 import ProductContainer from "../../container/ProductContainer";
 
-const ProductsList = ({ product, addProduct, name, manufacture }) => {
+const ProductsListCatalog = ({ product, addProduct, name, manufacture }) => {
   const searchTextLower = name.toString().toLowerCase();
 
   const productsFiltred = product.filter(product =>
@@ -29,4 +29,4 @@ const ProductsList = ({ product, addProduct, name, manufacture }) => {
 
 
 
-export default ProductsList;
+export default ProductsListCatalog;

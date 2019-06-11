@@ -4,15 +4,15 @@ import catalogPage from "../pages/Catalog/CatalogPage";
 
 import {
   fetchProductsWithRedux,
-  uniqueManufacturers
-} from "../actions/productsActions";
+  radioManufacture
+} from "../actions/products";
 
 const mapStateToProps = state => ({
   product: state.products.product,
   isLoading: state.products.isLoading,
   isError: state.products.isError,
   addProduct: state.cartItems.addProduct,
-  uniqueManufacturers: product => uniqueManufacturers(product)
+  radioManufacture: product => radioManufacture(product)
 });
 
 const mapDispatchToProps = {

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./CartItem.module.css";
+import styles from "./OrderItem.module.css";
 
 const ProductInCart = ({ id, name, image, amount, removeProduct }) => {
   return (
@@ -9,7 +9,7 @@ const ProductInCart = ({ id, name, image, amount, removeProduct }) => {
         <p className={styles.Price}>${amount}</p>
         <h3>{name}</h3>
         <button onClick={() => removeProduct(id)} className={styles.Button}>
-          X
+         Delete
         </button>
       </div>
     </>

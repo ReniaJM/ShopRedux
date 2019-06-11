@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./Counter.module.css";
+import styles from "./ProductCounter.module.css";
 
-const Counter = ({ cartLength, pay }) => {
+const ProductCounter = ({ cartLength, pay }) => {
   if (cartLength === 0) {
     return <p className={styles.Hidden}>{cartLength}</p>;
   } else {
@@ -14,4 +14,4 @@ const Counter = ({ cartLength, pay }) => {
   }
 };
 
-export default Counter;
+export default ProductCounter;

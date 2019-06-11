@@ -1,23 +1,23 @@
 import React,  {useEffect, useState }  from "react";
 import HeaderBig from "components/Header/HeaderBig";
-import ProductsList from "components/ProductsList/ProductsList";
+import ProductsList from "components/ProductsListCatalog/ProductsListCatalog";
 import styles from "./CatalogPage.module.css";
 import { RadioGroup, Radio } from "react-radio-group";
 
 
-const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,uniqueManufacturers}) => {
+const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,radioManufacture}) => {
 
   useEffect(() => {
     fetchProductsWithRedux();
-  }, []);
+  }, [fetchProductsWithRedux]);
 
-  const [name, searchInput] = useState("");
-  const [manufacture, changeInput] = useState("");
+  const [name, searchName] = useState("");
+  const [manufacture, searchManufacture] = useState("");
 
 
   const clearInput = () => {
-    searchInput('')
-    changeInput('')
+    searchName('')
+    searchManufacture('')
 
   }
 
@@ -38,8 +38,8 @@ const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,unique
             <div >
               <div className={styles.Header}>
                 <h4>Search</h4>
-                <span className={styles.Clear} onClick={clearInput} >
-                  Clear</span>
+                <button className={styles.Clear} onClick={clearInput} >
+                  Clear</button>
               </div>
               <div>
                 <input
@@ -47,7 +47,7 @@ const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,unique
                     type="text"
                     placeholder="search..."
                     value={name}
-                    onChange={e => searchInput(e.target.value)}
+                    onChange={e => searchName(e.target.value)}
                 />
               </div>
               <h4>Manufacturer</h4>
@@ -55,9 +55,9 @@ const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,unique
                   name={manufacture}
                   onClick={event => {
                     if (event.target.value === undefined) {
-                      changeInput("");
+                      searchManufacture("");
                     } else {
-                      changeInput(event.target.value);
+                      searchManufacture(event.target.value);
                     }
                   }}
               >
@@ -70,11 +70,11 @@ const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,unique
                   All
                 </label>
 
-                {uniqueManufacturers(product).map(item => (
-                    <div key={item}>
+                {radioManufacture(product).map(i => (
+                    <div key={i}>
                       <label className="radioLabel">
-                        <Radio value={item.toString().toLowerCase()} />
-                        {item}
+                        <Radio value={i.toString().toLowerCase()} />
+                        {i}
                       </label>
                     </div>
                 ))}

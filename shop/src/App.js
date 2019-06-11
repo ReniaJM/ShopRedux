@@ -8,7 +8,7 @@ import Footer from "components/Footer/Footer";
 import HomePageContainer from "./container/HomePageContainer";
 import AboutPage from "pages/About/AboutPage";
 import CatalogPageContainer from "./container/CatalogContainer";
-import CartListContainer from "./container/CartListContainer";
+import OrderListContainer from "./components/OrderItem/OrderListContainer";
 import store from "./store/store";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/" component={HomePageContainer} />
             <Route path="/catalog" component={CatalogPageContainer} />
             <Route path="/about" component={AboutPage} />
-            <Route path="/cart" component={CartListContainer} />
+            <Route path="/cart" component={OrderListContainer} />
           </Container>
           <Footer />
         </>

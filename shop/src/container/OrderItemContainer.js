@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 
-import CartItem from "../components/CartItem/CartItem";
+import CartItem from "../components/OrderItem/OrderItem";
 
-import { removeProduct } from "../actions/cartActions";
+import { removeProduct } from "../actions/cart";
 
 const getCartItems = state => state.cartItems;
 
@@ -18,9 +18,9 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-const CartItemContainer = connect(
+const OrderItemContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(CartItem);
 
-export default CartItemContainer;
+export default OrderItemContainer;

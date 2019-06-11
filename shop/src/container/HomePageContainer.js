@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import HomePage from "../pages/Home/HomePage";
 
-import { fetchProductsWithRedux } from "../actions/productsActions";
+import { fetchProductsWithRedux } from "../actions/products";
 
 const mapStateToProps = state => ({
   product: state.products.product,
