@@ -5,11 +5,11 @@ import styles from "./CatalogPage.module.css";
 import { RadioGroup, Radio } from "react-radio-group";
 
 
-const CatalogPage = ({product, isLoading, isError, fetchProductsWithRedux,radioManufacture}) => {
+const CatalogPage = ({product, isLoading, isError, fetchProductsToApp,radioManufacture}) => {
 
   useEffect(() => {
-    fetchProductsWithRedux();
-  }, [fetchProductsWithRedux]);
+    fetchProductsToApp();
+  }, [fetchProductsToApp]);
 
   const [name, searchName] = useState("");
   const [manufacture, searchManufacture] = useState("");

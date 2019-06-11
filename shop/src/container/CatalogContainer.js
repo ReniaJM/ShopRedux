@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import catalogPage from "../pages/Catalog/CatalogPage";
 
 import {
-  fetchProductsWithRedux,
+  fetchProductsToApp,
   radioManufacture
 } from "../actions/products";
 
@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchProductsWithRedux
+  fetchProductsToApp: fetchProductsToApp
 };
 
 const CatalogContainer = connect(

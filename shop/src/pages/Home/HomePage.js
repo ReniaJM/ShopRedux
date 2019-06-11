@@ -4,10 +4,10 @@ import HeaderBig from "components/Header/HeaderBig";
 import HeaderSmall from "components/Header/HeaderSmall";
 import ProductListHome from "components/ProductsListHome/ProductListHome";
 
-const HomePage = ({ product, isLoading, isError, fetchProductsWithRedux }) => {
+const HomePage = ({ product, isLoading, isError, fetchProductsToApp }) => {
   useEffect(() => {
-    fetchProductsWithRedux();
-  }, [fetchProductsWithRedux]);
+    fetchProductsToApp();
+  }, [fetchProductsToApp]);
 
 
   if (isError) {

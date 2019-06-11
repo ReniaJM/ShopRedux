@@ -5,22 +5,22 @@ import styles from "./ProductsListCatalog.module.css";
 import ProductContainer from "../../container/ProductContainer";
 
 const ProductsListCatalog = ({ product, addProduct, name, manufacture }) => {
-  const searchTextLower = name.toString().toLowerCase();
+  const textLower = name.toString().toLowerCase();
 
-  const productsFiltred = product.filter(product =>
-      product.name.toLowerCase().includes(searchTextLower)
+  const productsWithFilter= product.filter(product =>
+      product.name.toLowerCase().includes(textLower)
   );
 
-  const manufactureLower = manufacture;
-  const filtredProducts = productsFiltred.filter(product=>
-      product.manufacture.toLowerCase().includes(manufactureLower)
+  const manufactureLowerText = manufacture;
+  const allFiltredItems = productsWithFilter.filter(product=>
+      product.manufacture.toLowerCase().includes( manufactureLowerText)
   );
 
 
   return(
     <div className={styles.Products}>
-      {filtredProducts.map(e => (
-          <ProductContainer key={e.id} {...e} />
+      {allFiltredItems.map(i => (
+          <ProductContainer key={i.id} {...i} />
       ))}
     </div>
     )

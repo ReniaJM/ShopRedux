@@ -36,7 +36,7 @@ export const getProducts = () => {
   );
 };
 
-export const fetchProductsWithRedux = () => {
+export const fetchProductsToApp = () => {
   return dispatch => {
     dispatch(fetchProduct());
     return getProducts().then(([response, json]) => {
