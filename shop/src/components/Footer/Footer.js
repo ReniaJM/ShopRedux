@@ -8,7 +8,7 @@ const Footer = () => (
   <footer className={styles.Footer}>
     <Container>
       <p>
-        Shop © 2020 <br /> Designed by Andrzej
+        Shop © 2020 
       </p>
     </Container>
   </footer>
